@@ -1,0 +1,161 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="theme-color" content="#f5f3ed")
+    meta(name="description" content="웹 퍼블리셔 NeoDahl의 소개와 경력, 기술, 프로젝트를 담은 포트폴리오입니다.")
+    title NeoDahl — Web Publisher Portfolio
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet")
+  body
+    a.skip-link(href="#main-content") 본문 바로가기
+    header.site-header
+      .site-header__inner
+        a.site-logo(href="#about" aria-label="NeoDahl, About로 이동")
+          span.site-logo__wordmark(aria-hidden="true")
+            span.site-logo__initial N
+            span.site-logo__fade eo
+            span.site-logo__initial D
+            span.site-logo__fade ahl
+        nav.primary-nav(aria-label="주요 메뉴")
+          ul.primary-nav__list
+            li: a.primary-nav__link(href="#about") About
+            li: a.primary-nav__link(href="#career") Career
+            li: a.primary-nav__link(href="#skills") Skills
+            li: a.primary-nav__link(href="#contact") Contact
+        .theme-toggle-slot
+          button.theme-toggle(type="button" aria-label="테마 설정" title="테마 변경")
+            svg.theme-toggle__icon(viewBox="0 0 24 24" aria-hidden="true" focusable="false")
+              path.theme-toggle__moon(d="M19.8 15.1A8 8 0 0 1 8.9 4.2a8 8 0 1 0 10.9 10.9Z")
+              path.theme-toggle__sun(d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36-6.36-1.42 1.42M7.06 16.94l-1.42 1.42m12.72 0-1.42-1.42M7.06 7.06 5.64 5.64M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z")
+            span.theme-toggle__text 테마 변경
+    main#main-content
+      section#about.about-section.section-shell(aria-labelledby="about-title")
+        .about-section__intro
+          p.about-section__kicker 웹 퍼블리셔 포트폴리오
+          h1#about-title.about-section__title
+            | AI를 잘 다루는
+            br
+            em 웹 퍼블리셔.
+          p.about-section__summary
+            | 안녕하세요, NeoDahl입니다.
+            br
+            | AI를 실무에 활용해 더 빠르게 탐색하고, 사람을 위한 완성도 높은 웹을 만듭니다.
+        .about-section__art(aria-hidden="true")
+          .about-art__frame
+            .about-art__sun
+            .about-art__line.about-art__line--one
+            .about-art__line.about-art__line--two
+          p.about-section__note 좋은 화면은 조용하게, 오래 기억됩니다.
+      section#career.career-section.section-shell(aria-labelledby="career-title")
+        .section-heading
+          p.section-heading__eyebrow 02 / CAREER
+          h2#career-title.section-heading__title 쌓아온 시간
+          p.section-heading__description 한 곳에서 꾸준히 쌓아온 글로벌 웹사이트 운영 경험.
+        .career-entry
+          p.career-entry__period
+            time(datetime="2021-03") 2021.03
+            span(aria-hidden="true") —
+            time(datetime="2026-10") 2026.10
+          .career-entry__details
+            h3.career-entry__company LG CNS
+            p.career-entry__role LG.com 글로벌 사이트 관리
+            p.career-entry__description
+              | 다양한 국가와 환경을 고려하며 글로벌 사이트를 관리했습니다.
+              br
+              | 맡았던 업무의 범위와 성과는 프로젝트별로 더해갈 수 있도록 구성했습니다.
+        a.career-project-link(href="#projects") LG.com 프로젝트 자세히 보기
+        section#projects.projects-section(aria-labelledby="projects-title")
+          .section-heading.section-heading--projects
+            p.section-heading__eyebrow CAREER / PROJECTS
+            h3#projects-title.section-heading__title 프로젝트 경험
+            p.section-heading__description LG CNS에서 참여한 작업과 역할을 소개합니다.
+          .project-slider
+            .project-slider__controls(aria-label="프로젝트 슬라이드 조작")
+              button.project-slider__button.project-slider__button--previous(type="button" aria-label="이전 프로젝트" disabled)
+                span(aria-hidden="true") ←
+              p.project-slider__status(aria-live="polite" aria-atomic="true") 1 / 3
+              button.project-slider__button.project-slider__button--next(type="button" aria-label="다음 프로젝트")
+                span(aria-hidden="true") →
+            .swiper.project-slider__viewport(role="region" tabindex="0" aria-label="프로젝트 슬라이드")
+              .project-grid.swiper-wrapper
+                article.project-card.project-card--featured.swiper-slide
+                  .project-card__image-wrap
+                    img.project-card__image(src="https://placehold.co/1200x820/E8E3D8/34352F?text=Global+Website" alt="글로벌 웹사이트 프로젝트 이미지 자리" width="1200" height="820" loading="lazy")
+                    span.project-card__number 01
+                  .project-card__content
+                    p.project-card__category GLOBAL WEB · 2021—2026
+                    h4.project-card__title LG.com 글로벌 사이트 관리
+                    p.project-card__role 글로벌 사이트 운영
+                    p.project-card__description 실제로 담당한 업무와 프로젝트별 성과를 여기에 구체적으로 적어주세요.
+                    ul.project-card__tags(aria-label="사용 기술")
+                      li HTML
+                      li SASS
+                      li JavaScript
+                article.project-card.swiper-slide
+                  .project-card__image-wrap
+                    img.project-card__image(src="https://placehold.co/900x700/DCD8CE/34352F?text=Project+02" alt="두 번째 프로젝트 이미지 자리" width="900" height="700" loading="lazy")
+                    span.project-card__number 02
+                  .project-card__content
+                    p.project-card__category PROJECT · ADD DETAILS
+                    h4.project-card__title 프로젝트명 입력
+                    p.project-card__role 담당 역할 입력
+                    p.project-card__description 프로젝트의 문제, 해결 과정 또는 결과를 짧게 소개해 주세요.
+                    ul.project-card__tags(aria-label="사용 기술")
+                      li 기술 입력 예정
+                      li 기술 입력 예정
+                article.project-card.swiper-slide
+                  .project-card__image-wrap
+                    img.project-card__image(src="https://placehold.co/900x700/E9E5DC/34352F?text=Project+03" alt="세 번째 프로젝트 이미지 자리" width="900" height="700" loading="lazy")
+                    span.project-card__number 03
+                  .project-card__content
+                    p.project-card__category PROJECT · ADD DETAILS
+                    h4.project-card__title 프로젝트명 입력
+                    p.project-card__role 담당 역할 입력
+                    p.project-card__description 프로젝트의 문제, 해결 과정 또는 결과를 짧게 소개해 주세요.
+                    ul.project-card__tags(aria-label="사용 기술")
+                      li 기술 입력 예정
+                      li 기술 입력 예정
+      section#skills.skills-section.section-shell(aria-labelledby="skills-title")
+        .section-heading
+          p.section-heading__eyebrow 03 / SKILLS
+          h2#skills-title.section-heading__title 익숙한 도구와 기술
+          p.section-heading__description 다양한 웹 환경에 맞춰 화면을 구현하고, 팀과 함께 안정적으로 운영해 왔습니다.
+        .skills-grid
+          article.skill-card
+            p.skill-card__number 01
+            h3.skill-card__title 마크업
+            ul.skill-card__list(aria-label="마크업 기술")
+              li HTML
+          article.skill-card
+            p.skill-card__number 02
+            h3.skill-card__title 스타일
+            ul.skill-card__list(aria-label="스타일 기술")
+              li SASS
+          article.skill-card
+            p.skill-card__number 03
+            h3.skill-card__title 인터랙션
+            ul.skill-card__list(aria-label="인터랙션 기술")
+              li Vanilla JS
+              li jQuery
+          article.skill-card
+            p.skill-card__number 04
+            h3.skill-card__title 협업과 운영
+            ul.skill-card__list(aria-label="협업 도구")
+              li Git
+              li JIRA
+      section#contact.contact-section.section-shell(aria-labelledby="contact-title")
+        .section-heading
+          p.section-heading__eyebrow 04 / CONTACT
+          h2#contact-title.section-heading__title 다음 이야기를 기다립니다.
+        .contact-section__bottom
+          p.contact-section__copy 함께 만들 좋은 웹에 대해 이야기해요.
+          a.contact-link(href="mailto:neodahl90@gmail.com")
+            span.contact-link__email neodahl90@gmail.com
+            span.contact-link__arrow(aria-hidden="true") ↗
+    footer.site-footer
+      p.site-footer__copyright © 2026 NeoDahl
+      a.site-footer__back(href="#about") 처음으로 ↑
+    script(type="module" src="/src/scripts/main.js")
