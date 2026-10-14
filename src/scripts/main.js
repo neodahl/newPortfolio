@@ -26,7 +26,7 @@ function applyTheme(theme) {
     'aria-label',
     `${isDark ? '라이트' : '블랙'} 테마로 변경`,
   );
-  themeColor.setAttribute('content', isDark ? '#171815' : '#f5f3ed');
+  themeColor.setAttribute('content', isDark ? '#171815' : '#ece8df');
 }
 
 function getInitialTheme() {

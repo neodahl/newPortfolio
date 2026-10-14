@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <filter id="crumpled-paper" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="0.04 0.055"
+      numOctaves="4"
+      seed="23"
+      result="fold-noise"
+    />
+    <feColorMatrix in="fold-noise" type="saturate" values="0" result="folds" />
+    <feGaussianBlur in="folds" stdDeviation="0.35" result="soft-folds" />
+    <feDiffuseLighting
+      in="soft-folds"
+      surfaceScale="12"
+      lighting-color="#858585"
+      result="fold-shading"
+    >
+      <feDistantLight azimuth="225" elevation="28" />
+    </feDiffuseLighting>
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="0.12 0.15"
+      numOctaves="2"
+      seed="8"
+      result="grain-noise"
+    />
+    <feColorMatrix in="grain-noise" type="saturate" values="0" result="paper-grain" />
+    <feBlend in="fold-shading" in2="paper-grain" mode="soft-light" />
+  </filter>
+  <rect width="100%" height="100%" filter="url(#crumpled-paper)" />
+</svg>

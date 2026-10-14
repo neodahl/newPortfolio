@@ -22,12 +22,12 @@
 
 :root {
   color-scheme: light;
-  --color-page: #f5f3ed;
-  --color-surface: #eeece5;
+  --color-page: #ece8df;
+  --color-surface: #e3ded4;
   --color-ink: #24251f;
   --color-muted: #6c6d65;
   --color-line: #d7d5cc;
-  --color-accent: #c3281d;
+  --color-accent: #174ea6;
   --color-focus: #185abc;
   --font-sans: "Manrope", "Noto Sans KR", sans-serif;
   --font-display: "Manrope", "Noto Sans KR", sans-serif;
@@ -41,8 +41,14 @@
   --color-ink: #f2f0e9;
   --color-muted: #b1b0a7;
   --color-line: #41423c;
-  --color-accent: #ff765e;
+  --color-accent: #78a9ff;
   --color-focus: #b6d0ff;
+}
+
+:root[data-theme="dark"] body::before {
+  background-image: url("../images/paper-texture-dark.svg");
+  opacity: 0.65;
+  mix-blend-mode: soft-light;
 }
 
 * {
@@ -55,15 +61,35 @@ html {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   margin: 0;
-  background: var(--color-page);
+  background-color: var(--color-page);
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: rem(16px);
   font-weight: 400;
   line-height: 1.65;
   transition: background-color 220ms ease, color 220ms ease;
+}
+
+body::before {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../images/paper-texture.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  inset: 0;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
 }
 
 img {
@@ -255,7 +281,13 @@ a {
   padding: 0;
   background: transparent;
   cursor: pointer;
-  transition: width 220ms ease, height 220ms ease, color 160ms ease, border-color 160ms ease;
+  transition:
+    width 220ms ease,
+    height 220ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 180ms ease;
 }
 
 .theme-toggle__icon {
@@ -266,6 +298,33 @@ a {
   fill: currentColor;
   line-height: 1;
   transition: width 220ms ease, height 220ms ease, transform 220ms ease;
+}
+
+@keyframes theme-toggle-wiggle {
+  0%,
+  100% {
+    transform: rotate(0) scale(1);
+  }
+
+  35% {
+    transform: rotate(-18deg) scale(1.16);
+  }
+
+  70% {
+    transform: rotate(14deg) scale(1.08);
+  }
+}
+
+@media (hover: hover) {
+  .theme-toggle:hover {
+    transform: rotate(-7deg) scale(1.06);
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
+
+  .theme-toggle:hover .theme-toggle__icon {
+    animation: theme-toggle-wiggle 420ms ease-in-out;
+  }
 }
 
 .theme-toggle__moon,
