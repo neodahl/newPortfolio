@@ -11,6 +11,17 @@ const sections = navigationLinks
 
 const storageKey = 'neodahl-theme';
 const colorScheme = window.matchMedia?.('(prefers-color-scheme: dark)');
+let themeAnimationTimer;
+
+function animateThemeToggle() {
+  window.clearTimeout(themeAnimationTimer);
+  themeToggle.classList.remove('is-changing');
+  void themeToggle.offsetWidth;
+  themeToggle.classList.add('is-changing');
+  themeAnimationTimer = window.setTimeout(() => {
+    themeToggle.classList.remove('is-changing');
+  }, 420);
+}
 
 function getSystemTheme() {
   if (colorScheme) return colorScheme.matches ? 'dark' : 'light';
@@ -45,6 +56,7 @@ themeToggle.addEventListener('click', () => {
   const nextTheme =
     document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
   applyTheme(nextTheme);
+  animateThemeToggle();
   try {
     localStorage.setItem(storageKey, nextTheme);
   } catch (error) {
