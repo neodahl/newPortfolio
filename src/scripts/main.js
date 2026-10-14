@@ -11,16 +11,16 @@ const sections = navigationLinks
 
 const storageKey = 'neodahl-theme';
 const colorScheme = window.matchMedia?.('(prefers-color-scheme: dark)');
-let themeAnimationTimer;
+let themeToggleAnimationTimer;
 
 function animateThemeToggle() {
-  window.clearTimeout(themeAnimationTimer);
-  themeToggle.classList.remove('is-changing');
+  window.clearTimeout(themeToggleAnimationTimer);
+  themeToggle.classList.remove('is-animating');
   void themeToggle.offsetWidth;
-  themeToggle.classList.add('is-changing');
-  themeAnimationTimer = window.setTimeout(() => {
-    themeToggle.classList.remove('is-changing');
-  }, 420);
+  themeToggle.classList.add('is-animating');
+  themeToggleAnimationTimer = window.setTimeout(() => {
+    themeToggle.classList.remove('is-animating');
+  }, 240);
 }
 
 function getSystemTheme() {
@@ -37,6 +37,7 @@ function applyTheme(theme) {
     'aria-label',
     `${isDark ? '라이트' : '블랙'} 테마로 변경`,
   );
+  themeToggle.setAttribute('aria-pressed', String(isDark));
   themeColor.setAttribute('content', isDark ? '#171815' : '#ece8df');
 }
 
@@ -55,8 +56,8 @@ applyTheme(getInitialTheme());
 themeToggle.addEventListener('click', () => {
   const nextTheme =
     document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  applyTheme(nextTheme);
   animateThemeToggle();
+  applyTheme(nextTheme);
   try {
     localStorage.setItem(storageKey, nextTheme);
   } catch (error) {
