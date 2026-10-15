@@ -32,6 +32,7 @@
   --about-art-surface: #e3ddcf;
   --about-art-guide: #a29b8d;
   --about-art-crossing: #5a5b55;
+  --page-texture: url("../images/paper-texture-light.png");
   --toggle-track: #f4f2ec;
   --toggle-track-border: #cfcec7;
   --toggle-thumb: #d9dbe0;
@@ -52,15 +53,10 @@
   --about-art-surface: #242a2b;
   --about-art-guide: #75827f;
   --about-art-crossing: #c7cbc3;
+  --page-texture: url("../images/paper-texture-dark.png");
   --toggle-track: #242529;
   --toggle-track-border: #3e4047;
   --toggle-thumb: #42444d;
-}
-
-:root[data-theme="dark"] body::before {
-  background-image: url("../images/paper-texture-dark.svg");
-  opacity: 0.65;
-  mix-blend-mode: soft-light;
 }
 
 * {
@@ -77,26 +73,16 @@ body {
   min-width: rem(320px);
   margin: 0;
   background-color: var(--color-page);
+  background-image: var(--page-texture);
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: 1152px 768px;
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: rem(16px);
   font-weight: 400;
   line-height: 1.65;
   transition: background-color 220ms ease, color 220ms ease;
-}
-
-body::before {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url("../images/paper-texture.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  content: "";
-  inset: 0;
-  opacity: 0.12;
-  mix-blend-mode: multiply;
 }
 
 #app {
