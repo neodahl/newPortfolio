@@ -29,6 +29,9 @@
   --color-line: #d7d5cc;
   --color-accent: #174ea6;
   --color-focus: #185abc;
+  --about-art-surface: #e3ddcf;
+  --about-art-guide: #a29b8d;
+  --about-art-crossing: #5a5b55;
   --toggle-track: #f4f2ec;
   --toggle-track-border: #cfcec7;
   --toggle-thumb: #d9dbe0;
@@ -46,6 +49,9 @@
   --color-line: #41423c;
   --color-accent: #78a9ff;
   --color-focus: #b6d0ff;
+  --about-art-surface: #242a2b;
+  --about-art-guide: #75827f;
+  --about-art-crossing: #c7cbc3;
   --toggle-track: #242529;
   --toggle-track-border: #3e4047;
   --toggle-thumb: #42444d;
@@ -589,7 +595,14 @@ a {
   position: relative;
   overflow: hidden;
   aspect-ratio: 0.88;
-  background: var(--color-surface);
+  background: var(--about-art-surface);
+  background:
+    radial-gradient(
+      ellipse at 68% 24%,
+      color-mix(in srgb, var(--color-accent) 7%, var(--about-art-surface)),
+      transparent 48%
+    ),
+    var(--about-art-surface);
 }
 
 .about-art__frame::before,
@@ -603,9 +616,10 @@ a {
   right: 14%;
   bottom: 0;
   left: 14%;
-  border: rem(1px) solid var(--color-line);
+  border: rem(1px) solid var(--about-art-guide);
   border-bottom: 0;
   border-radius: 50% 50% 0 0;
+  opacity: 0.88;
 }
 
 .about-art__frame::after {
@@ -613,8 +627,9 @@ a {
   right: 0;
   left: 0;
   height: rem(1px);
-  background: var(--color-line);
+  background: var(--about-art-guide);
   transform: rotate(-29deg);
+  opacity: 0.88;
 }
 
 .about-art__sun {
@@ -633,8 +648,8 @@ a {
   z-index: 2;
   right: 15%;
   left: 15%;
-  height: rem(1px);
-  background: var(--color-ink);
+  height: rem(1.25px);
+  background: var(--about-art-crossing);
 }
 
 .about-art__line--one {
@@ -660,8 +675,9 @@ a {
 .about-section__note {
   margin: rem(13px 0 0);
   color: var(--color-muted);
-  font-size: rem(12px);
+  font-size: rem(11px);
   text-align: right;
+  white-space: nowrap;
 }
 
 .career-section {
