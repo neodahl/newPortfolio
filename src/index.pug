@@ -4,7 +4,7 @@ html(lang="ko")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(name="theme-color" content="#ece8df")
-    meta(name="description" content="웹 퍼블리셔 NeoDahl의 소개와 경력, 기술, 프로젝트를 담은 포트폴리오입니다.")
+    meta(name="description" content="상대의 의도를 세심하게 읽고, 웹 화면으로 구현하는 웹 퍼블리셔 NeoDahl의 포트폴리오입니다.")
     title NeoDahl — Web Publisher Portfolio
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
@@ -40,26 +40,43 @@ html(lang="ko")
     main#main-content
       section#about.about-section.section-shell(aria-labelledby="about-title")
         .about-section__intro
-          p.about-section__kicker AI를 잘 다루는 웹 퍼블리셔
+          p.about-section__kicker 생각을 읽고, 화면으로 답하다
           h1#about-title.about-section__title
-            | UI Developer
+            | Web Publisher
             br
             em NeoDahl
           p.about-section__summary
             | 안녕하세요, 네오달입니다.
             br
-            | 프로젝트 및 업무의 진행에 있어 실무자들과의 협업 능력을 가장 중요하게 생각하며 언제나 이를 위해 최선을 다 하는 것을 중요하게 생각합니다.
+            | 말로 다 전해지지 않은 의도까지
+            br 
+            | 함께 소통하며 더 나은 웹을 만듭니다.
         .about-section__art(aria-hidden="true")
           .about-art__frame
             .about-art__sun
             .about-art__line.about-art__line--one
             .about-art__line.about-art__line--two
-          p.about-section__note 복잡함은 단순함의 조합입니다.
+          p.about-section__note Where Complexity Meets Simplicity
+      section#approach.approach-section.section-shell(aria-labelledby="approach-title")
+        .approach-section__heading.section-heading
+          p.section-heading__eyebrow APPROACH
+          h2#approach-title.section-heading__title 좋은 웹을 만드는 기준
+          p.section-heading__description 사용자의 경험과 멋진 웹사이트를 만드는 과정 모두 중요합니다.
+        .approach-grid
+          article.approach-card
+            h3.approach-card__title 누구나 편리하게
+            p.approach-card__description Sematic Markup과 웹 접근성을 바탕으로, 다양한 사용자가 막힘없이 이용할 수 있게 만듭니다.
+          article.approach-card
+            h3.approach-card__title 빠르고 안정적으로
+            p.approach-card__description 디바이스의 다양함을 고려한 어떤 환경에서도 자연스러운 경험을 할 수 있도록 고민합니다.
+          article.approach-card
+            h3.approach-card__title 함께 오래 쓰도록
+            p.approach-card__description 의도를 정확히 파악하고, 수정과 확장을 고려한 코드로 완성합니다.
       section#career.career-section.section-shell(aria-labelledby="career-title")
         .section-heading
-          p.section-heading__eyebrow 02 / CAREER
+          p.section-heading__eyebrow CAREER
           h2#career-title.section-heading__title 쌓아온 시간
-          p.section-heading__description 한 곳에서 꾸준히 쌓아온 글로벌 웹사이트 운영 경험.
+          p.section-heading__description 다양한 국가와 환경을 고려해 쌓아온 LG.com 글로벌 사이트 운영 경험.
         .career-entry
           p.career-entry__period
             time(datetime="2021-03") 2021.03
@@ -69,20 +86,19 @@ html(lang="ko")
             h3.career-entry__company LG CNS
             p.career-entry__role LG.com 글로벌 사이트 관리
             p.career-entry__description
-              | 다양한 국가와 환경을 고려하며 글로벌 사이트를 관리했습니다.
+              | 여러 국가와 사용 환경을 고려하며 LG.com 글로벌 사이트를 관리했습니다.
               br
-              | 맡았던 업무의 범위와 성과는 프로젝트별로 더해갈 수 있도록 구성했습니다.
-        a.career-project-link(href="#projects") LG.com 프로젝트 자세히 보기
+              | 프로젝트별 역할과 사용 기술을 아래에 정리했습니다.
+        a.career-project-link(href="#projects") 프로젝트별 역할과 기술 보기
         section#projects.projects-section(aria-labelledby="projects-title")
           .section-heading.section-heading--projects
-            p.section-heading__eyebrow CAREER / PROJECTS
+            p.section-heading__eyebrow PROJECTS
             h3#projects-title.section-heading__title 프로젝트 경험
-            p.section-heading__description LG CNS에서 참여한 작업과 역할을 소개합니다.
+            p.section-heading__description 참여한 프로젝트와 역할, 사용 기술을 소개합니다.
           .project-slider
             .project-slider__controls(aria-label="프로젝트 슬라이드 조작")
               button.project-slider__button.project-slider__button--previous(type="button" aria-label="이전 프로젝트" disabled)
                 span(aria-hidden="true") ←
-              p.project-slider__status(aria-live="polite" aria-atomic="true") 1 / 3
               button.project-slider__button.project-slider__button--next(type="button" aria-label="다음 프로젝트")
                 span(aria-hidden="true") →
             .swiper.project-slider__viewport(role="region" tabindex="0" aria-label="프로젝트 슬라이드")
@@ -90,74 +106,67 @@ html(lang="ko")
                 article.project-card.project-card--featured.swiper-slide
                   .project-card__image-wrap
                     img.project-card__image(src="https://placehold.co/1200x820/E8E3D8/34352F?text=Global+Website" alt="글로벌 웹사이트 프로젝트 이미지 자리" width="1200" height="820" loading="lazy")
-                    span.project-card__number 01
                   .project-card__content
                     p.project-card__category GLOBAL WEB · 2021—2026
                     h4.project-card__title LG.com 글로벌 사이트 관리
                     p.project-card__role 글로벌 사이트 운영
-                    p.project-card__description 실제로 담당한 업무와 프로젝트별 성과를 여기에 구체적으로 적어주세요.
+                    p.project-card__description 다양한 국가와 환경을 고려하며 LG.com 글로벌 사이트를 운영·관리했습니다.
                     ul.project-card__tags(aria-label="사용 기술")
                       li HTML
                       li SASS
                       li JavaScript
                 article.project-card.swiper-slide
                   .project-card__image-wrap
-                    img.project-card__image(src="https://placehold.co/900x700/DCD8CE/34352F?text=Project+02" alt="두 번째 프로젝트 이미지 자리" width="900" height="700" loading="lazy")
-                    span.project-card__number 02
+                    img.project-card__image(src="https://placehold.co/900x700/DCD8CE/34352F?text=Project" alt="프로젝트 이미지 자리" width="900" height="700" loading="lazy")
                   .project-card__content
-                    p.project-card__category PROJECT · ADD DETAILS
-                    h4.project-card__title 프로젝트명 입력
-                    p.project-card__role 담당 역할 입력
-                    p.project-card__description 프로젝트의 문제, 해결 과정 또는 결과를 짧게 소개해 주세요.
+                    p.project-card__category PROJECT · DETAILS TO COME
+                    h4.project-card__title 프로젝트 정보 정리 중
+                    p.project-card__role 프로젝트별 역할을 정리하고 있습니다
+                    p.project-card__description 참여 내용이 정리되는 대로 역할과 기여 과정을 추가할 예정입니다.
                     ul.project-card__tags(aria-label="사용 기술")
-                      li 기술 입력 예정
-                      li 기술 입력 예정
+                      li 기술 정리 중
+                      li 기술 정리 중
                 article.project-card.swiper-slide
                   .project-card__image-wrap
-                    img.project-card__image(src="https://placehold.co/900x700/E9E5DC/34352F?text=Project+03" alt="세 번째 프로젝트 이미지 자리" width="900" height="700" loading="lazy")
-                    span.project-card__number 03
+                    img.project-card__image(src="https://placehold.co/900x700/E9E5DC/34352F?text=Project" alt="프로젝트 이미지 자리" width="900" height="700" loading="lazy")
                   .project-card__content
-                    p.project-card__category PROJECT · ADD DETAILS
-                    h4.project-card__title 프로젝트명 입력
-                    p.project-card__role 담당 역할 입력
-                    p.project-card__description 프로젝트의 문제, 해결 과정 또는 결과를 짧게 소개해 주세요.
+                    p.project-card__category PROJECT · DETAILS TO COME
+                    h4.project-card__title 프로젝트 정보 정리 중
+                    p.project-card__role 프로젝트별 역할을 정리하고 있습니다
+                    p.project-card__description 참여 내용이 정리되는 대로 역할과 기여 과정을 추가할 예정입니다.
                     ul.project-card__tags(aria-label="사용 기술")
-                      li 기술 입력 예정
-                      li 기술 입력 예정
+                      li 기술 정리 중
+                      li 기술 정리 중
       section#skills.skills-section.section-shell(aria-labelledby="skills-title")
         .section-heading
-          p.section-heading__eyebrow 03 / SKILLS
-          h2#skills-title.section-heading__title 익숙한 도구와 기술
-          p.section-heading__description 다양한 웹 환경에 맞춰 화면을 구현하고, 팀과 함께 안정적으로 운영해 왔습니다.
+          p.section-heading__eyebrow SKILLS
+          h2#skills-title.section-heading__title 화면을 완성하는 기술
+          p.section-heading__description 의도를 화면으로 옮기기 위해 사용하는 마크업·스타일·인터랙션 기술과 협업 도구입니다.
         .skills-grid
           article.skill-card
-            p.skill-card__number 01
             h3.skill-card__title 마크업
             ul.skill-card__list(aria-label="마크업 기술")
               li HTML
           article.skill-card
-            p.skill-card__number 02
             h3.skill-card__title 스타일
             ul.skill-card__list(aria-label="스타일 기술")
               li SASS
           article.skill-card
-            p.skill-card__number 03
             h3.skill-card__title 인터랙션
             ul.skill-card__list(aria-label="인터랙션 기술")
               li Vanilla JS
               li jQuery
           article.skill-card
-            p.skill-card__number 04
             h3.skill-card__title 협업과 운영
             ul.skill-card__list(aria-label="협업 도구")
               li Git
               li JIRA
       section#contact.contact-section.section-shell(aria-labelledby="contact-title")
         .section-heading
-          p.section-heading__eyebrow 04 / CONTACT
-          h2#contact-title.section-heading__title 다음 이야기를 기다립니다.
+          p.section-heading__eyebrow CONTACT
+          h2#contact-title.section-heading__title 함께 만들 다음 화면
         .contact-section__bottom
-          p.contact-section__copy 함께 만들 좋은 웹에 대해 이야기해요.
+          p.contact-section__copy 좋은 웹 경험에 대한 생각을 나누고 싶습니다.
           a.contact-link(href="mailto:neodahl90@gmail.com")
             span.contact-link__email neodahl90@gmail.com
             span.contact-link__arrow(aria-hidden="true") ↗

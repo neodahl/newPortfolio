@@ -26,10 +26,10 @@
   --color-surface: #e3ded4;
   --color-ink: #24251f;
   --color-muted: #6c6d65;
-  --color-line: #d7d5cc;
+  --color-line: #9d998e;
   --color-accent: #174ea6;
   --color-focus: #185abc;
-  --about-art-surface: #e3ddcf;
+  --about-art-surface: #e3dac9;
   --about-art-guide: #a29b8d;
   --about-art-crossing: #5a5b55;
   --page-texture: url("../images/paper-texture-light.png");
@@ -47,7 +47,7 @@
   --color-surface: #22231f;
   --color-ink: #f2f0e9;
   --color-muted: #b1b0a7;
-  --color-line: #41423c;
+  --color-line: #62635c;
   --color-accent: #78a9ff;
   --color-focus: #b6d0ff;
   --about-art-surface: #242a2b;
@@ -297,6 +297,7 @@ a {
 .primary-nav__link {
   position: relative;
   padding: rem(8px 0);
+  font-weight: 500;
   line-height: 1.35;
   transition:
     color 160ms ease,
@@ -518,17 +519,13 @@ a {
 .about-section {
   position: relative;
   display: grid;
-  min-height: min(rem(820px), calc(100svh - rem(76px)));
+  min-height: min(rem(780px), calc(100svh - rem(120px)));
   align-content: center;
   grid-template-columns: 1fr 0.78fr;
   align-items: center;
   column-gap: 5vw;
-  padding-top: rem(72px);
-  padding-bottom: rem(72px);
-}
-
-.about-section__intro {
-  padding-top: rem(44px);
+  padding-top: rem(48px);
+  padding-bottom: rem(48px);
 }
 
 .about-section__kicker,
@@ -561,6 +558,7 @@ a {
 .about-section__title em {
   color: var(--color-accent);
   font-style: normal;
+  font-weight: 600;
 }
 
 .about-section__summary {
@@ -574,7 +572,7 @@ a {
   width: 100%;
   max-width: rem(440px);
   justify-self: end;
-  margin-top: rem(70px);
+  margin-top: rem(40px);
 }
 
 .about-art__frame {
@@ -664,6 +662,42 @@ a {
   font-size: rem(11px);
   text-align: right;
   white-space: nowrap;
+}
+
+.approach-section {
+  border-top: rem(1px) solid var(--color-line);
+  padding-top: clamp(rem(64px), 8vw, rem(104px));
+  padding-bottom: clamp(rem(72px), 9vw, rem(112px));
+}
+
+.approach-section__heading {
+  max-width: rem(680px);
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: rem(44px);
+  gap: rem(28px);
+}
+
+.approach-card {
+  border-top: rem(1px) solid var(--color-line);
+  padding-top: rem(16px);
+}
+
+.approach-card__title {
+  margin: 0 0 rem(8px);
+  font-size: rem(18px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.approach-card__description {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: rem(13px);
+  line-height: 1.8;
 }
 
 .career-section {
@@ -807,15 +841,6 @@ a {
   opacity: 0.5;
 }
 
-.project-slider__status {
-  min-width: rem(42px);
-  margin: 0;
-  color: var(--color-muted);
-  font-family: var(--font-mono);
-  font-size: rem(11px);
-  text-align: center;
-}
-
 .project-slider__viewport {
   padding-bottom: rem(14px);
   touch-action: pan-y;
@@ -851,21 +876,6 @@ a {
 
 .project-card:hover .project-card__image {
   transform: scale(1.025);
-}
-
-.project-card__number {
-  position: absolute;
-  top: rem(14px);
-  left: rem(16px);
-  display: grid;
-  width: rem(34px);
-  aspect-ratio: 1;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--color-page);
-  color: var(--color-ink);
-  font-family: var(--font-mono);
-  font-size: rem(11px);
 }
 
 .project-card__content {
@@ -939,15 +949,8 @@ a {
   border-left: rem(1px) solid var(--color-line);
 }
 
-.skill-card__number {
-  margin: 0;
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: rem(10px);
-}
-
 .skill-card__title {
-  margin: rem(30px 0 14px);
+  margin: 0 0 rem(14px);
   font-size: rem(17px);
   font-family: var(--font-display);
   font-weight: 500;
@@ -1051,7 +1054,7 @@ a {
 
 @media (min-width: 768px) {
   .about-section {
-    min-height: min(rem(860px), calc(100svh - rem(76px)));
+    min-height: min(rem(800px), calc(100svh - rem(120px)));
   }
 
   .project-card {
@@ -1075,13 +1078,18 @@ a {
 
 @media (min-width: 1440px) {
   .about-section {
-    min-height: rem(880px);
+    min-height: rem(820px);
   }
 }
 
 @media (max-width: 767px) {
   html {
     scroll-padding-top: rem(132px);
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+    gap: rem(24px);
   }
 
   .site-header__inner {
@@ -1201,10 +1209,6 @@ a {
     grid-template-columns: 1fr;
     padding-top: rem(120px);
     padding-bottom: rem(72px);
-  }
-
-  .about-section__intro {
-    padding-top: 0;
   }
 
   .about-section__title {

@@ -200,7 +200,7 @@ if ('IntersectionObserver' in window) {
   );
 
   document.querySelectorAll(
-    '.about-section__intro, .about-section__art, .section-heading, .career-entry, .career-project-link, .skill-card, .contact-section__bottom',
+    '.about-section__intro, .about-section__art, .section-heading, .approach-card, .career-entry, .career-project-link, .skill-card, .contact-section__bottom',
   )
     .forEach((element) => {
       element.classList.add('reveal-on-scroll');
@@ -213,14 +213,11 @@ const projectViewport = document.querySelector('.project-slider__viewport');
 if (projectViewport) {
   const previousButton = document.querySelector('.project-slider__button--previous');
   const nextButton = document.querySelector('.project-slider__button--next');
-  const slideStatus = document.querySelector('.project-slider__status');
   let activeProjectIndex = 0;
   let resizeTimeout;
 
   function updateProjectStatus(swiper) {
     activeProjectIndex = swiper.realIndex;
-    const slideCount = swiper.slides.length;
-    slideStatus.textContent = `${activeProjectIndex + 1} / ${slideCount}`;
     previousButton.disabled = swiper.isBeginning;
     nextButton.disabled = swiper.isEnd;
   }
@@ -272,9 +269,9 @@ if (projectViewport) {
       enabled: true,
       prevSlideMessage: '이전 프로젝트',
       nextSlideMessage: '다음 프로젝트',
-      firstSlideMessage: '첫 번째 프로젝트입니다',
+      firstSlideMessage: '첫 프로젝트입니다',
       lastSlideMessage: '마지막 프로젝트입니다',
-      slideLabelMessage: '{{index}} / {{slidesLength}}',
+      slideLabelMessage: '프로젝트',
     },
     breakpoints: {
       768: {
