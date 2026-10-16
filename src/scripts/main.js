@@ -200,7 +200,7 @@ if ('IntersectionObserver' in window) {
   );
 
   document.querySelectorAll(
-    '.about-section__intro, .about-section__art, .section-heading, .approach-card, .career-entry, .career-project-link, .skill-card, .contact-section__bottom',
+    '.about-section__intro, .about-section__art, .section-heading, .approach-card, .career-entry, .skill-card, .contact-section__bottom',
   )
     .forEach((element) => {
       element.classList.add('reveal-on-scroll');

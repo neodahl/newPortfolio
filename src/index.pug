@@ -25,8 +25,8 @@ html(lang="ko")
         nav.primary-nav(aria-label="주요 메뉴")
           ul.primary-nav__list
             li: a.primary-nav__link(href="#about") About
-            li: a.primary-nav__link(href="#career") Career
             li: a.primary-nav__link(href="#skills") Skills
+            li: a.primary-nav__link(href="#career") Career
             li: a.primary-nav__link(href="#contact") Contact
         .theme-toggle-slot
           button.theme-toggle(type="button" aria-label="테마 설정" aria-pressed="false" title="테마 변경")
@@ -72,6 +72,30 @@ html(lang="ko")
           article.approach-card
             h3.approach-card__title 함께 오래 쓰도록
             p.approach-card__description 의도를 정확히 파악하고, 수정과 확장을 고려한 코드로 완성합니다.
+      section#skills.skills-section.section-shell(aria-labelledby="skills-title")
+        .section-heading
+          p.section-heading__eyebrow SKILLS
+          h2#skills-title.section-heading__title 화면을 완성하는 기술
+          p.section-heading__description 의도를 화면으로 옮기기 위해 사용하는 마크업·스타일·인터랙션 기술과 협업 도구입니다.
+        .skills-grid
+          article.skill-card
+            h3.skill-card__title 마크업
+            ul.skill-card__list(aria-label="마크업 기술")
+              li HTML
+          article.skill-card
+            h3.skill-card__title 스타일
+            ul.skill-card__list(aria-label="스타일 기술")
+              li SASS
+          article.skill-card
+            h3.skill-card__title 인터랙션
+            ul.skill-card__list(aria-label="인터랙션 기술")
+              li Vanilla JS
+              li jQuery
+          article.skill-card
+            h3.skill-card__title 협업과 운영
+            ul.skill-card__list(aria-label="협업 도구")
+              li Git
+              li JIRA
       section#career.career-section.section-shell(aria-labelledby="career-title")
         .section-heading
           p.section-heading__eyebrow CAREER
@@ -125,7 +149,6 @@ html(lang="ko")
           .career-entry__details
             h3.career-entry__company 타이탄 플랫폼
             p.career-entry__role 사이트 운영부터 UI 개발과 이벤트 페이지 제작까지 폭넓게 담당했습니다.
-        a.career-project-link(href="#projects") 프로젝트별 역할과 기술 보기
         section#projects.projects-section(aria-labelledby="projects-title")
           .section-heading.section-heading--projects
             p.section-heading__eyebrow PROJECTS
@@ -173,30 +196,6 @@ html(lang="ko")
                     ul.project-card__tags(aria-label="사용 기술")
                       li 기술 정리 중
                       li 기술 정리 중
-      section#skills.skills-section.section-shell(aria-labelledby="skills-title")
-        .section-heading
-          p.section-heading__eyebrow SKILLS
-          h2#skills-title.section-heading__title 화면을 완성하는 기술
-          p.section-heading__description 의도를 화면으로 옮기기 위해 사용하는 마크업·스타일·인터랙션 기술과 협업 도구입니다.
-        .skills-grid
-          article.skill-card
-            h3.skill-card__title 마크업
-            ul.skill-card__list(aria-label="마크업 기술")
-              li HTML
-          article.skill-card
-            h3.skill-card__title 스타일
-            ul.skill-card__list(aria-label="스타일 기술")
-              li SASS
-          article.skill-card
-            h3.skill-card__title 인터랙션
-            ul.skill-card__list(aria-label="인터랙션 기술")
-              li Vanilla JS
-              li jQuery
-          article.skill-card
-            h3.skill-card__title 협업과 운영
-            ul.skill-card__list(aria-label="협업 도구")
-              li Git
-              li JIRA
       section#contact.contact-section.section-shell(aria-labelledby="contact-title")
         .section-heading
           p.section-heading__eyebrow CONTACT

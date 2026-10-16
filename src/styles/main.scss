@@ -27,6 +27,7 @@
   --color-ink: #24251f;
   --color-muted: #6c6d65;
   --color-line: #9d998e;
+  --color-line-soft: #c4c0b5;
   --color-accent: #174ea6;
   --color-focus: #185abc;
   --about-art-surface: #e3dac9;
@@ -48,6 +49,7 @@
   --color-ink: #f2f0e9;
   --color-muted: #b1b0a7;
   --color-line: #62635c;
+  --color-line-soft: #3f403a;
   --color-accent: #78a9ff;
   --color-focus: #b6d0ff;
   --about-art-surface: #242a2b;
@@ -524,7 +526,7 @@ a {
   align-items: center;
   column-gap: 5vw;
   padding-top: rem(48px);
-  padding-bottom: rem(48px);
+  padding-bottom: rem(112px);
 }
 
 .about-section__kicker,
@@ -533,7 +535,7 @@ a {
   margin: 0;
   color: var(--color-accent);
   font-family: var(--font-mono);
-  font-size: rem(11px);
+  font-size: rem(14px);
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
@@ -670,7 +672,7 @@ a {
 .approach-section {
   border-top: rem(1px) solid var(--color-line);
   padding-top: clamp(rem(64px), 8vw, rem(104px));
-  padding-bottom: clamp(rem(72px), 9vw, rem(112px));
+  padding-bottom: clamp(rem(128px), 13vw, rem(176px));
 }
 
 .approach-section__heading {
@@ -685,7 +687,7 @@ a {
 }
 
 .approach-card {
-  border-top: rem(1px) solid var(--color-line);
+  border-top: rem(1px) solid var(--color-line-soft);
   padding-top: rem(16px);
 }
 
@@ -706,7 +708,7 @@ a {
 .career-section {
   border-top: rem(1px) solid var(--color-line);
   padding-top: clamp(rem(88px), 12vw, rem(160px));
-  padding-bottom: clamp(rem(96px), 13vw, rem(176px));
+  padding-bottom: clamp(rem(160px), 17vw, rem(224px));
 }
 
 .section-heading {
@@ -734,7 +736,7 @@ a {
   grid-template-columns: minmax(0, 0.45fr) minmax(0, 1.7fr);
   align-items: start;
   margin-top: rem(78px);
-  border-top: rem(1px) solid var(--color-line);
+  border-top: rem(1px) solid var(--color-line-soft);
   padding-top: rem(30px);
   gap: rem(16px);
 }
@@ -770,33 +772,6 @@ a {
   margin: rem(8px 0 20px);
   color: var(--color-muted);
   font-size: rem(15px);
-}
-
-.career-entry__description {
-  margin: 0;
-  color: var(--color-muted);
-  font-size: rem(14px);
-  line-height: 1.9;
-}
-
-.career-project-link {
-  display: inline-flex;
-  align-items: center;
-  margin-top: rem(34px);
-  border-bottom: rem(1px) solid var(--color-accent);
-  padding-bottom: rem(2px);
-  color: var(--color-accent);
-  font-size: rem(13px);
-  gap: rem(12px);
-}
-
-.career-project-link::after {
-  content: "↘";
-  transition: transform 180ms ease;
-}
-
-.career-project-link:hover::after {
-  transform: translate(rem(2px), rem(2px));
 }
 
 .projects-section {
@@ -926,7 +901,7 @@ a {
 }
 
 .project-card__tags li {
-  border: rem(1px) solid var(--color-line);
+  border: rem(1px) solid var(--color-line-soft);
   border-radius: rem(99px);
   padding: rem(5px 11px);
   color: var(--color-muted);
@@ -937,15 +912,15 @@ a {
 .skills-section {
   border-top: rem(1px) solid var(--color-line);
   padding-top: clamp(rem(88px), 12vw, rem(160px));
-  padding-bottom: clamp(rem(100px), 14vw, rem(180px));
+  padding-bottom: clamp(rem(168px), 18vw, rem(240px));
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: rem(62px);
-  border-top: rem(1px) solid var(--color-line);
-  border-bottom: rem(1px) solid var(--color-line);
+  border-top: rem(1px) solid var(--color-line-soft);
+  border-bottom: rem(1px) solid var(--color-line-soft);
 }
 
 .skill-card {
@@ -954,7 +929,7 @@ a {
 }
 
 .skill-card + .skill-card {
-  border-left: rem(1px) solid var(--color-line);
+  border-left: rem(1px) solid var(--color-line-soft);
 }
 
 .skill-card__title {
@@ -986,7 +961,7 @@ a {
 .contact-section {
   border-top: rem(1px) solid var(--color-line);
   padding-top: clamp(rem(86px), 12vw, rem(150px));
-  padding-bottom: clamp(rem(90px), 12vw, rem(150px));
+  padding-bottom: clamp(rem(152px), 16vw, rem(216px));
 }
 
 .contact-section__bottom {
@@ -1063,6 +1038,10 @@ a {
 @media (min-width: 768px) {
   .about-section {
     min-height: min(rem(800px), calc(100svh - rem(120px)));
+  }
+
+  .approach-card__title {
+    font-size: rem(20px);
   }
 
   .project-card {
@@ -1216,7 +1195,7 @@ a {
     min-height: auto;
     grid-template-columns: 1fr;
     padding-top: rem(120px);
-    padding-bottom: rem(72px);
+    padding-bottom: rem(128px);
   }
 
   .about-section__title {
@@ -1281,7 +1260,7 @@ a {
   }
 
   .skill-card:nth-child(n + 3) {
-    border-top: rem(1px) solid var(--color-line);
+    border-top: rem(1px) solid var(--color-line-soft);
   }
 
   .skill-card__title {
