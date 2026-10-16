@@ -223,24 +223,7 @@ if (projectViewport) {
   }
 
   function updateProjectSliderLayout(swiper, activeIndex) {
-    swiper.update();
-    const lastSlideIndex = swiper.slidesGrid.length - 1;
-    if (lastSlideIndex < 1) {
-      swiper.params.slidesOffsetAfter = 0;
-      swiper.update();
-      swiper.slideTo(0, 0, false);
-      updateProjectStatus(swiper);
-      return;
-    }
-    const lastSlideThreshold =
-      (swiper.slidesGrid[lastSlideIndex - 1] +
-        swiper.slidesGrid[lastSlideIndex]) /
-      2;
-    // Give the final slide enough room to become active at every viewport width.
-    swiper.params.slidesOffsetAfter = Math.max(
-      0,
-      lastSlideThreshold + swiper.width - swiper.virtualSize + 1,
-    );
+    swiper.params.slidesOffsetAfter = 0;
     swiper.update();
     swiper.slideTo(activeIndex, 0, false);
     updateProjectStatus(swiper);

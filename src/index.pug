@@ -8,7 +8,7 @@ html(lang="ko")
     title NeoDahl — Web Publisher Portfolio
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    link(href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Manrope:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Manrope:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Outfit:wght@500;600;700&family=Yarndings+12&display=swap" rel="stylesheet")
   body
     a.skip-link(href="#main-content") 본문 바로가기
     header.site-header
@@ -60,7 +60,7 @@ html(lang="ko")
       section#approach.approach-section.section-shell(aria-labelledby="approach-title")
         .approach-section__heading.section-heading
           p.section-heading__eyebrow APPROACH
-          h2#approach-title.section-heading__title 좋은 웹을 만드는 기준
+          h2#approach-title.section-heading__title 웹을 만드는 기준
           p.section-heading__description 사용자의 경험과 멋진 웹사이트를 만드는 과정 모두 중요합니다.
         .approach-grid
           article.approach-card
@@ -75,26 +75,35 @@ html(lang="ko")
       section#skills.skills-section.section-shell(aria-labelledby="skills-title")
         .section-heading
           p.section-heading__eyebrow SKILLS
-          h2#skills-title.section-heading__title 화면을 완성하는 기술
-          p.section-heading__description 의도를 화면으로 옮기기 위해 사용하는 마크업·스타일·인터랙션 기술과 협업 도구입니다.
+          h2#skills-title.section-heading__title 완벽한 웹을 완성하는 기술
+          p.section-heading__description 더 나은 웹을 위해 쌓아온 기술과 경험.
         .skills-grid
           article.skill-card
-            h3.skill-card__title 마크업
+            h3.skill-card__title Markup
             ul.skill-card__list(aria-label="마크업 기술")
+              li Pug
               li HTML
           article.skill-card
-            h3.skill-card__title 스타일
+            h3.skill-card__title Style
             ul.skill-card__list(aria-label="스타일 기술")
-              li SASS
+              li Dart Sass
           article.skill-card
-            h3.skill-card__title 인터랙션
+            h3.skill-card__title Interaction
             ul.skill-card__list(aria-label="인터랙션 기술")
-              li Vanilla JS
+              li JavaScript
+              li TypeScript
               li jQuery
+              li Libraries &amp; Plugins
           article.skill-card
-            h3.skill-card__title 협업과 운영
-            ul.skill-card__list(aria-label="협업 도구")
+            h3.skill-card__title Tools &amp; Workflow
+            ul.skill-card__list(aria-label="협업 및 개발 도구")
+              li VS Code
               li Git
+              li GitLab
+              li SoureTree
+              li Figma
+              li Gulp
+              li Vite
               li JIRA
       section#career.career-section.section-shell(aria-labelledby="career-title")
         .section-heading
@@ -202,10 +211,10 @@ html(lang="ko")
           h2#contact-title.section-heading__title 함께 만들 다음 화면
         .contact-section__bottom
           p.contact-section__copy 좋은 웹 경험에 대한 생각을 나누고 싶습니다.
-          a.contact-link(href="mailto:neodahl90@gmail.com")
+          a.contact-link(href="mailto:neodahl90@gmail.com" aria-label="neodahl90@gmail.com 이메일 보내기")
             span.contact-link__email neodahl90@gmail.com
             span.contact-link__arrow(aria-hidden="true") ↗
     footer.site-footer
       p.site-footer__copyright © 2026 NeoDahl
-      a.site-footer__back(href="#about") 처음으로 ↑
+      a.site-footer__back(href="#about") Back to Top ↑
     script(type="module" src="/src/scripts/main.js")
