@@ -169,10 +169,10 @@ a {
 .site-logo__wordmark {
   display: inline-flex;
   align-items: baseline;
-  font-family: "Outfit", var(--font-display);
+  font-family: "Kaushan Script", cursive;
   font-size: rem(25px);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1;
   white-space: nowrap;
 }
@@ -186,21 +186,20 @@ a {
 }
 
 .site-header.is-scrolled .site-logo {
-  width: max-content;
   min-width: 0;
   min-height: rem(28px);
   gap: 0;
 }
 
 .site-header.is-scrolled .site-logo__wordmark {
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
 }
 
 .site-logo__fade {
   display: inline-block;
   flex: 0 0 auto;
   max-width: 1em;
-  overflow: hidden;
+  overflow: visible;
   opacity: 1;
   transition:
     opacity 320ms ease,
@@ -550,15 +549,19 @@ a {
   margin: rem(18px 0 22px);
   font-size: clamp(rem(52px), 6.2vw, rem(88px));
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: -0.04em;
   line-height: 1.2;
 }
 
 .about-section__title em {
   color: var(--color-accent);
+  font-family: "Dancing Script", cursive;
+  font-size: 1.85em;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .about-section__summary {
@@ -728,12 +731,17 @@ a {
 .career-entry {
   display: grid;
   position: relative;
-  grid-template-columns: 0.8fr 1.7fr;
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 1.7fr);
   align-items: start;
   margin-top: rem(78px);
   border-top: rem(1px) solid var(--color-line);
   padding-top: rem(30px);
-  gap: rem(24px);
+  gap: rem(16px);
+}
+
+.career-entry--previous {
+  margin-top: rem(24px);
+  padding-top: rem(22px);
 }
 
 .career-entry__period {
@@ -760,7 +768,7 @@ a {
 
 .career-entry__role {
   margin: rem(8px 0 20px);
-  color: var(--color-accent);
+  color: var(--color-muted);
   font-size: rem(15px);
 }
 
@@ -1225,6 +1233,11 @@ a {
     grid-template-columns: 1fr;
     margin-top: rem(46px);
     row-gap: rem(20px);
+  }
+
+  .career-entry--previous {
+    margin-top: rem(18px);
+    padding-top: rem(18px);
   }
 
   .career-entry__period {

@@ -8,7 +8,7 @@ html(lang="ko")
     title NeoDahl — Web Publisher Portfolio
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    link(href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Manrope:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet")
   body
     a.skip-link(href="#main-content") 본문 바로가기
     header.site-header
@@ -65,10 +65,10 @@ html(lang="ko")
         .approach-grid
           article.approach-card
             h3.approach-card__title 누구나 편리하게
-            p.approach-card__description Sematic Markup과 웹 접근성을 바탕으로, 다양한 사용자가 막힘없이 이용할 수 있게 만듭니다.
+            p.approach-card__description Sematic Markup과 웹 접근성을 바탕으로, 다양한 사용자가 막힘없이 이용할 수 있게 고민합니다.
           article.approach-card
             h3.approach-card__title 빠르고 안정적으로
-            p.approach-card__description 디바이스의 다양함을 고려한 어떤 환경에서도 자연스러운 경험을 할 수 있도록 고민합니다.
+            p.approach-card__description 디바이스의 다양함을 고려한 어떤 환경에서도 자연스러운 경험을 할 수 있도록 만듭니다.
           article.approach-card
             h3.approach-card__title 함께 오래 쓰도록
             p.approach-card__description 의도를 정확히 파악하고, 수정과 확장을 고려한 코드로 완성합니다.
@@ -76,19 +76,55 @@ html(lang="ko")
         .section-heading
           p.section-heading__eyebrow CAREER
           h2#career-title.section-heading__title 쌓아온 시간
-          p.section-heading__description 다양한 국가와 환경을 고려해 쌓아온 LG.com 글로벌 사이트 운영 경험.
-        .career-entry
+          p.section-heading__description 사이트 운영과 UI 개발, 웹 접근성 개선까지 이어온 경험입니다.
+        article.career-entry
           p.career-entry__period
             time(datetime="2021-03") 2021.03
             span(aria-hidden="true") —
             time(datetime="2026-10") 2026.10
           .career-entry__details
             h3.career-entry__company LG CNS
-            p.career-entry__role LG.com 글로벌 사이트 관리
-            p.career-entry__description
-              | 여러 국가와 사용 환경을 고려하며 LG.com 글로벌 사이트를 관리했습니다.
-              br
-              | 프로젝트별 역할과 사용 기술을 아래에 정리했습니다.
+            p.career-entry__role 여러 국가와 사용 환경을 고려하며 LG.com 글로벌 사이트를 관리했습니다.
+        article.career-entry.career-entry--previous
+          p.career-entry__period
+            time(datetime="2020-11") 2020.11
+            span(aria-hidden="true") —
+            time(datetime="2021-01") 2021.01
+          .career-entry__details
+            h3.career-entry__company 인재INC
+            p.career-entry__role 한국재정정보원의 웹 접근성 개선 작업에 참여했습니다.
+        article.career-entry.career-entry--previous
+          p.career-entry__period
+            time(datetime="2020-01") 2020.01
+            span(aria-hidden="true") —
+            time(datetime="2020-10") 2020.10
+          .career-entry__details
+            h3.career-entry__company 스마트퓨쳐
+            p.career-entry__role 자사 서비스를 운영하고 개발하며, 이벤트 페이지 제작도 함께 맡았습니다.
+        article.career-entry.career-entry--previous
+          p.career-entry__period
+            time(datetime="2019-03") 2019.03
+            span(aria-hidden="true") —
+            time(datetime="2019-12") 2019.12
+          .career-entry__details
+            h3.career-entry__company 한신정보기술
+            p.career-entry__role 공공기관 사이트를 운영하며 웹 접근성 품질을 높여 WA 마크를 획득했습니다.
+        article.career-entry.career-entry--previous
+          p.career-entry__period
+            time(datetime="2018-02") 2018.02
+            span(aria-hidden="true") —
+            time(datetime="2019-01") 2019.01
+          .career-entry__details
+            h3.career-entry__company 개념원리
+            p.career-entry__role 사이트 운영과 UI 개발을 맡고, 이벤트 페이지를 제작했습니다.
+        article.career-entry.career-entry--previous
+          p.career-entry__period
+            time(datetime="2016-01") 2016.01
+            span(aria-hidden="true") —
+            time(datetime="2018-01") 2018.01
+          .career-entry__details
+            h3.career-entry__company 타이탄 플랫폼
+            p.career-entry__role 사이트 운영부터 UI 개발과 이벤트 페이지 제작까지 폭넓게 담당했습니다.
         a.career-project-link(href="#projects") 프로젝트별 역할과 기술 보기
         section#projects.projects-section(aria-labelledby="projects-title")
           .section-heading.section-heading--projects
