@@ -280,7 +280,6 @@ a {
 .primary-nav__link,
 .theme-toggle {
   color: var(--color-muted);
-  font-size: rem(13px);
   transition: color 160ms ease;
 }
 
@@ -299,6 +298,7 @@ a {
   position: relative;
   padding: rem(8px 0);
   font-weight: 500;
+  font-size: rem(16px);
   line-height: 1.35;
   transition:
     color 160ms ease,
@@ -313,7 +313,7 @@ a {
 
 .site-header.is-scrolled .primary-nav__link {
   padding: rem(4px 0 8px);
-  font-size: rem(11px);
+  font-size: rem(13px);
   line-height: 1.2;
 }
 
@@ -693,7 +693,7 @@ a {
 
 .approach-card__title {
   margin: 0 0 rem(8px);
-  font-size: rem(18px);
+  font-size: rem(22px);
   font-weight: 500;
   letter-spacing: -0.025em;
 }
@@ -701,7 +701,7 @@ a {
 .approach-card__description {
   margin: 0;
   color: var(--color-muted);
-  font-size: rem(13px);
+  font-size: rem(16px);
   line-height: 1.8;
 }
 
@@ -1047,7 +1047,7 @@ a {
   }
 
   .approach-card__title {
-    font-size: rem(20px);
+    font-size: rem(24px);
   }
 
   .project-card {
