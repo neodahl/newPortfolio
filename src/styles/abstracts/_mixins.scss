@@ -1,0 +1,59 @@
+@use "sass:map";
+@use "variables" as *;
+@use "functions" as *;
+
+/// Viewport is at least the breakpoint wide.
+@mixin up($name) {
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+/// Viewport is narrower than the breakpoint (or equal to it when $inclusive).
+@mixin down($name, $inclusive: false) {
+  $max: map.get($breakpoints, $name);
+
+  @if not $inclusive {
+    $max: $max - 1px;
+  }
+
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+/// Styles the element while the sticky header is condensed.
+@mixin header-scrolled {
+  .site-header.is-scrolled & {
+    @content;
+  }
+}
+
+@mixin eyebrow($font-size: 14px) {
+  margin: 0;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: rem($font-size);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+@mixin section-block($padding-top, $padding-bottom) {
+  border-top: rem(1px) solid var(--color-line);
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+
+@mixin toggle-size($box, $track, $thumb, $icon) {
+  width: rem($box);
+  height: rem($box);
+  --toggle-track-height: #{rem($track)};
+  --toggle-thumb-size: #{rem($thumb)};
+  --toggle-icon-size: #{rem($icon)};
+}

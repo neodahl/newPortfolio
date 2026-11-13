@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "../abstracts" as *;
+
+// Design tokens per theme. Each key becomes a CSS custom property.
+$themes: (
+  light: (
+    color-page: #ece8df,
+    color-surface: #e3ded4,
+    color-ink: #24251f,
+    color-muted: #6c6d65,
+    color-line: #9d998e,
+    color-line-soft: #c4c0b5,
+    color-accent: #174ea6,
+    color-focus: #185abc,
+    about-art-surface: #e3dac9,
+    about-art-guide: #a29b8d,
+    about-art-crossing: #5a5b55,
+    toggle-track: #f4f2ec,
+    toggle-track-border: #cfcec7,
+    toggle-thumb: #d9dbe0,
+  ),
+  dark: (
+    color-page: #171815,
+    color-surface: #22231f,
+    color-ink: #f2f0e9,
+    color-muted: #b1b0a7,
+    color-line: #62635c,
+    color-line-soft: #3f403a,
+    color-accent: #78a9ff,
+    color-focus: #b6d0ff,
+    about-art-surface: #242a2b,
+    about-art-guide: #75827f,
+    about-art-crossing: #c7cbc3,
+    toggle-track: #242529,
+    toggle-track-border: #3e4047,
+    toggle-thumb: #42444d,
+  ),
+);
+
+@mixin define-theme($name) {
+  color-scheme: $name;
+
+  @each $token, $value in map.get($themes, $name) {
+    --#{$token}: #{$value};
+  }
+}
+
+:root {
+  @include define-theme(light);
+  // Asset paths are resolved by Vite relative to main.scss, not to this partial
+  --page-texture: url("../images/paper-texture-light.png");
+  --font-sans: "Manrope", "Noto Sans KR", sans-serif;
+  --font-display: "Manrope", "Noto Sans KR", sans-serif;
+  --font-mono: "DM Mono", monospace;
+
+  &[data-theme="dark"] {
+    @include define-theme(dark);
+    --page-texture: url("../images/paper-texture-dark.png");
+  }
+}

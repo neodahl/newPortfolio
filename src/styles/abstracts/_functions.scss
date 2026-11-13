@@ -1,0 +1,59 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "variables" as *;
+
+/// Converts every px value in a space/comma separated list to rem.
+/// Keywords (auto), percentages and unitless values (0) are left untouched.
+/// @example rem(30px auto -12px) => 1.875rem auto -0.75rem
+@function rem($values) {
+  $result: null;
+  $separator: list.separator($values);
+
+  @each $value in $values {
+    @if meta.type-of($value) == "number" and math.unit($value) == "px" and $value != 0 {
+      $value: math.div($value, 16px) * 1rem;
+    }
+
+    @if $result == null {
+      $result: $value;
+    } @else {
+      $result: list.append($result, $value, $separator: $separator);
+    }
+  }
+
+  @return $result;
+}
+
+/// Fluid size that scales with the viewport between a min and a max.
+/// @example fluid(36px, 5vw, 64px) => clamp(2.25rem, 5vw, 4rem)
+@function fluid($min, $preferred, $max) {
+  @return clamp(rem($min), $preferred, rem($max));
+}
+
+/// Centered container width that keeps a gutter on both sides.
+@function shell-width($gutter, $max) {
+  @return min(100% - rem($gutter), rem($max));
+}
+
+@function z($layer) {
+  @return map.get($layers, $layer);
+}
+
+/// Builds a transition list. A bare property name uses the header timing,
+/// a full transition value (e.g. `(color 160ms ease)`) is kept as written.
+/// @example smooth-transition((color 160ms ease), width, height)
+@function smooth-transition($transitions...) {
+  $result: ();
+
+  @each $transition in $transitions {
+    @if meta.type-of($transition) == "list" {
+      $result: list.append($result, $transition, $separator: comma);
+    } @else {
+      $result: list.append($result, $transition $duration-header $ease-smooth, $separator: comma);
+    }
+  }
+
+  @return $result;
+}

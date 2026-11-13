@@ -1,0 +1,24 @@
+// Breakpoints: 480 / 768 / 1024 / 1440
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px,
+);
+
+// Stacking order
+$layers: (
+  content: 1,
+  header: 10,
+  skip-link: 20,
+);
+
+// Motion
+$ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+$duration-header: 280ms;
+
+// Typeface
+$font-signature: "Dancing Script", cursive;
+$font-logo: "Kaushan Script", cursive;
+$font-email: "Yarndings 12", var(--font-sans);
