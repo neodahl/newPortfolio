@@ -190,22 +190,39 @@ window.addEventListener(
 updateHeaderOnScroll();
 
 if ('IntersectionObserver' in window) {
+  const aboutSection = document.querySelector('#about');
+  const aboutIntro = document.querySelector('.about-section__intro');
+  const aboutArt = document.querySelector('.about-section__art');
+
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        entry.target.classList.toggle('is-visible', entry.isIntersecting);
+        if (entry.target === aboutSection) {
+          aboutIntro?.classList.toggle('is-visible', entry.isIntersecting);
+          aboutArt?.classList.toggle('is-visible', entry.isIntersecting);
+        } else {
+          entry.target.classList.toggle('is-visible', entry.isIntersecting);
+        }
       });
     },
     { threshold: 0.12 },
   );
 
   document.querySelectorAll(
-    '.about-section__intro, .about-section__art, .section-heading, .approach-card, .career-entry, .skill-card, .contact-section__bottom',
+    '.section-heading, .approach-card, .career-entry, .skill-card, .contact-section__bottom',
   )
     .forEach((element) => {
       element.classList.add('reveal-on-scroll');
       revealObserver.observe(element);
     });
+
+  if (aboutSection) {
+    aboutIntro?.classList.add('about-section__intro--animated');
+    aboutArt?.classList.add('reveal-on-scroll');
+    // Apply the hidden state before the observer starts the reveal.
+    if (aboutArt) void aboutArt.offsetWidth;
+    revealObserver.observe(aboutSection);
+  }
 }
 
 const projectViewport = document.querySelector('.project-slider__viewport');
