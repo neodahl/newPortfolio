@@ -38,7 +38,7 @@
 @mixin eyebrow($font-size: 14px) {
   margin: 0;
   color: var(--color-accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: rem($font-size);
   letter-spacing: 0.11em;
   text-transform: uppercase;

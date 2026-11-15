@@ -16,8 +16,9 @@ $themes: (
     about-art-guide: #a29b8d,
     about-art-crossing: #5a5b55,
     toggle-track: #f4f2ec,
-    toggle-track-border: #cfcec7,
-    toggle-thumb: #d9dbe0,
+    toggle-track-border: #77786e,
+    toggle-thumb: #326ccb,
+    toggle-icon: #fff,
   ),
   dark: (
     color-page: #171815,
@@ -31,9 +32,10 @@ $themes: (
     about-art-surface: #242a2b,
     about-art-guide: #75827f,
     about-art-crossing: #c7cbc3,
-    toggle-track: #242529,
-    toggle-track-border: #3e4047,
-    toggle-thumb: #42444d,
+    toggle-track: #42444d,
+    toggle-track-border: #75827f,
+    toggle-thumb: #171815,
+    toggle-icon: var(--color-accent),
   ),
 );
 
@@ -49,9 +51,12 @@ $themes: (
   @include define-theme(light);
   // Asset paths are resolved by Vite relative to main.scss, not to this partial
   --page-texture: url("../images/paper-texture-light.png");
-  --font-sans: "Manrope", "Noto Sans KR", sans-serif;
-  --font-display: "Manrope", "Noto Sans KR", sans-serif;
-  --font-mono: "DM Mono", monospace;
+  --font-sans: "Shantell Sans", "Manrope", "Noto Sans KR", sans-serif;
+  --font-display: "Shantell Sans", "Manrope", "Noto Sans KR", sans-serif;
+  --font-label: "Shantell Sans", "DM Mono", monospace;
+  --font-korean-heading: "Shantell Sans", "Gaegu", "Noto Sans KR", sans-serif;
+  --font-korean-body: "Shantell Sans", "Hi Melody", "Noto Sans KR", sans-serif;
+  --font-korean-accent: "Shantell Sans", "Nanum Pen Script", "Noto Sans KR", sans-serif;
 
   &[data-theme="dark"] {
     @include define-theme(dark);

@@ -1,4 +1,8 @@
 doctype html
+mixin handDrawnArrow(iconClass, rotation)
+  svg(class=iconClass viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false")
+    g(transform=`rotate(${rotation} 12 12)`)
+      path(d="M12.7 20.2C11.5 16.6 12.8 12.8 12.1 9.6C11.8 7.7 12.4 5.8 12.1 4.1M5.1 11.3C7.1 8.9 9.6 6.5 12.1 4.1C14.1 6.6 16.8 8.5 18.6 10.8")
 html(lang="ko")
   head
     meta(charset="UTF-8")
@@ -10,7 +14,7 @@ html(lang="ko")
     link(rel="apple-touch-icon" sizes="180x180" href="/src/images/apple-touch-icon.png")
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    link(href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Manrope:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Outfit:wght@500;600;700&family=Yarndings+12&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Gaegu:wght@400;700&family=Hi+Melody&family=Manrope:wght@300;400;500;600&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300;400;500;600&family=Shantell+Sans:wght@300;400;500;600;700&family=Yarndings+12&display=swap" rel="stylesheet")
   body
     a.skip-link(href="#main-content") 본문 바로가기
     header.site-header
@@ -34,10 +38,9 @@ html(lang="ko")
           button.theme-toggle(type="button" aria-label="테마 설정" aria-pressed="false" title="테마 변경")
             span.theme-toggle__thumb
               svg.theme-toggle__icon(viewBox="0 0 24 24" aria-hidden="true" focusable="false")
-                path.theme-toggle__moon(d="M19.8 15.1A8 8 0 0 1 8.9 4.2a8 8 0 1 0 10.9 10.9Z")
+                path.theme-toggle__moon(d="M10.2 3.2C6.5 4 3.8 7.3 3.9 11.5c.1 4.8 3.7 8.5 8.5 8.7 3.5.1 6.4-1.6 7.8-4.3-3.1.7-6.1-.1-8-2.2-2-2.2-2.6-6.4-2-10.5Z")
                 g.theme-toggle__sun
-                  circle(cx="12" cy="12" r="4")
-                  path(d="M12 2.5v2.2m0 14.6v2.2M21.5 12h-2.2M4.7 12H2.5m16.2-6.7-1.6 1.6M6.9 17.1l-1.6 1.6m13.4 0-1.6-1.6M6.9 6.9 5.3 5.3")
+                  path(d="M12.1 7.7c2.4-.1 4.2 1.8 4.2 4.1.1 2.4-1.8 4.4-4.2 4.4-2.3.1-4.3-1.8-4.3-4.2-.1-2.4 1.8-4.2 4.3-4.3ZM11.8 2.2l.2 2.5m.2 14.6-.1 2.4M2.4 12.2l2.4-.2m14.4-.1 2.4.2M5.3 5.5l1.8 1.7m9.9 9.8 1.7 1.6M18.5 5.1l-1.7 2M7.1 17l-1.9 1.7")
             
     main#main-content
       section#about.about-section.section-shell(aria-labelledby="about-title")
@@ -45,7 +48,7 @@ html(lang="ko")
           p.about-section__kicker 생각을 읽고, 화면으로 답하다
           h1#about-title.about-section__title
             span.about-section__title-line
-              span.about-section__title-text Web Publisher
+              span.about-section__title-text.about-section__title-text--role Web Publisher
             br
             span.about-section__title-line
               span.about-section__title-text
@@ -114,22 +117,22 @@ html(lang="ko")
         .section-heading
           p.section-heading__eyebrow CAREER
           h2#career-title.section-heading__title 쌓아온 시간
-          p.section-heading__description 사이트 운영과 UI 개발, 웹 접근성 개선까지 이어온 경험
+          p.section-heading__description 사이트 운영과 #[span.career-section__latin UI] 개발, 웹 접근성 개선까지 이어온 경험
         article.career-entry
           p.career-entry__period
             time(datetime="2021-03") 2021.03
             span(aria-hidden="true") —
             time(datetime="2026-10") 2026.10
           .career-entry__details
-            h3.career-entry__company LG CNS
-            p.career-entry__role 70여 개 국가 LG.com 글로벌 사이트 관리
+            h3.career-entry__company: span.career-section__latin LG CNS
+            p.career-entry__role 70여 개 국가 #[span.career-section__latin LG.com] 글로벌 사이트 관리
         article.career-entry.career-entry--previous
           p.career-entry__period
             time(datetime="2020-11") 2020.11
             span(aria-hidden="true") —
             time(datetime="2021-01") 2021.01
           .career-entry__details
-            h3.career-entry__company 인재INC
+            h3.career-entry__company 인재#[span.career-section__latin INC]
             p.career-entry__role 한국재정정보원의 웹 접근성 개선 작업 참여
         article.career-entry.career-entry--previous
           p.career-entry__period
@@ -154,7 +157,7 @@ html(lang="ko")
             time(datetime="2019-01") 2019.01
           .career-entry__details
             h3.career-entry__company 개념원리
-            p.career-entry__role 사이트 운영과 UI 개발, 이벤트 페이지 제작
+            p.career-entry__role 사이트 운영과 #[span.career-section__latin UI] 개발, 이벤트 페이지 제작
         article.career-entry.career-entry--previous
           p.career-entry__period
             time(datetime="2016-01") 2016.01
@@ -162,7 +165,7 @@ html(lang="ko")
             time(datetime="2018-01") 2018.01
           .career-entry__details
             h3.career-entry__company 타이탄 플랫폼
-            p.career-entry__role 사이트 운영부터 UI 개발 및 이벤트 페이지 제작
+            p.career-entry__role 사이트 운영부터 #[span.career-section__latin UI] 개발 및 이벤트 페이지 제작
 
         section#projects.projects-section(aria-labelledby="projects-title")
           .section-heading.section-heading--projects
@@ -172,19 +175,19 @@ html(lang="ko")
           .project-slider
             .project-slider__controls(aria-label="프로젝트 슬라이드 조작")
               button.project-slider__button.project-slider__button--previous(type="button" aria-label="이전 프로젝트" disabled)
-                span(aria-hidden="true") ←
+                +handDrawnArrow("project-slider__icon", -90)
               button.project-slider__button.project-slider__button--next(type="button" aria-label="다음 프로젝트")
-                span(aria-hidden="true") →
+                +handDrawnArrow("project-slider__icon", 90)
             .swiper.project-slider__viewport(role="region" tabindex="0" aria-label="프로젝트 슬라이드")
               .project-grid.swiper-wrapper
                 article.project-card.project-card--featured.swiper-slide
                   .project-card__image-wrap
                     img.project-card__image(src="/src/images/lg-responsive-thumbnail.jpg" alt="데스크톱, 태블릿, 모바일에서 본 LG.com 화면" width="1672" height="941" loading="lazy")
                   .project-card__content
-                    p.project-card__category GLOBAL WEB · 2021—2026
-                    h4.project-card__title LG.com 글로벌 사이트 관리
+                    p.project-card__category: span.project-card__latin GLOBAL WEB · 2021—2026
+                    h4.project-card__title #[span.project-card__latin LG.com] 글로벌 사이트 관리
                     p.project-card__role 글로벌 사이트 운영
-                    p.project-card__description 다양한 국가와 환경을 고려하며 LG.com 글로벌 사이트를 운영·관리했습니다.
+                    p.project-card__description 다양한 국가와 환경을 고려하며 #[span.project-card__latin LG.com] 글로벌 사이트를 운영·관리했습니다.
                     ul.project-card__tags(aria-label="사용 기술")
                       li HTML
                       li Sass
@@ -194,9 +197,9 @@ html(lang="ko")
                   .project-card__image-wrap
                     img.project-card__image(src="/src/images/smartfuture-thumbnail.jpg" alt="노다지 주식정보 앱 화면과 스마트폰" width="1600" height="1000" loading="lazy")
                   .project-card__content
-                    p.project-card__category Mobile App · 2020
+                    p.project-card__category: span.project-card__latin Mobile App · 2020
                     h4.project-card__title 스마트 퓨처
-                    p.project-card__role 앱 퍼블리싱 100%
+                    p.project-card__role 앱 퍼블리싱 #[span.project-card__latin 100%]
                     p.project-card__description 주식정보 앱 노다지의 모든 퍼블리싱을 담당했습니다.
                     ul.project-card__tags(aria-label="사용 기술")
                       li HTML
@@ -206,9 +209,9 @@ html(lang="ko")
                   .project-card__image-wrap
                     img.project-card__image(src="/src/images/geumcheon-responsive.jpg" alt="금천구 홈페이지의 데스크톱, 태블릿, 모바일 화면" width="1448" height="1086" loading="lazy")
                   .project-card__content
-                    p.project-card__category 공공기관 · 2019
+                    p.project-card__category 공공기관 · #[span.project-card__latin 2019]
                     h4.project-card__title 금천구청 홈페이지
-                    p.project-card__role 사이트 관리 및 WA마크 획득
+                    p.project-card__role 사이트 관리 및 #[span.project-card__latin WA]마크 획득
                     p.project-card__description 금천구청에서 관리하는 모든 웹 사이트 관리했습니다.
                     ul.project-card__tags(aria-label="사용 기술")
                       li HTML
@@ -218,7 +221,7 @@ html(lang="ko")
                   .project-card__image-wrap
                     img.project-card__image(src="/src/images/ajou-cancer-center.png" alt="아주대학교병원 암센터 홈페이지 화면" width="1244" height="768" loading="lazy")
                   .project-card__content
-                    p.project-card__category 의료기관 · 2018
+                    p.project-card__category 의료기관 · #[span.project-card__latin 2018]
                     h4.project-card__title 아주대학교 병원 암센터
                     p.project-card__role 홈페이지 리뉴얼
                     p.project-card__description 아주대학교 병원 암센터 홈페이지의 리뉴얼을 진행했습니다.
@@ -239,12 +242,12 @@ html(lang="ko")
     footer.site-footer
       p.site-footer__copyright
         span.site-footer__copyright-symbol ©
-        |  2026 NeoDahl
+        |  2026
+        span.site-footer__copyright-name NeoDahl
       span.site-footer__ornament
         | neodahl90
         span.site-footer__ornament-at @
         | gmail.com
       a.site-footer__back(href="#about" aria-label="맨 위로 이동")
-        svg.site-footer__back-icon(viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false")
-          path(d="M12 19V5M5 12l7-7 7 7")
+        +handDrawnArrow("site-footer__back-icon", 0)
     script(type="module" src="/src/scripts/main.js")
