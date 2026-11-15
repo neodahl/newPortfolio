@@ -49,6 +49,8 @@ $themes: (
 
 :root {
   @include define-theme(light);
+  --color-control-hover: #41423f;
+  --color-control-hover-icon: #fff;
   // Asset paths are resolved by Vite relative to main.scss, not to this partial
   --page-texture: url("../images/paper-texture-light.png");
   --font-sans: "Shantell Sans", "Manrope", "Noto Sans KR", sans-serif;
