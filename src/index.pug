@@ -187,40 +187,64 @@ html(lang="ko")
                     p.project-card__description 다양한 국가와 환경을 고려하며 LG.com 글로벌 사이트를 운영·관리했습니다.
                     ul.project-card__tags(aria-label="사용 기술")
                       li HTML
-                      li SASS
+                      li Sass
                       li JavaScript
+                      li Git
                 article.project-card.swiper-slide
                   .project-card__image-wrap
-                    img.project-card__image(src="https://placehold.co/900x700/DCD8CE/34352F?text=Project" alt="프로젝트 이미지 자리" width="900" height="700" loading="lazy")
+                    img.project-card__image(src="/src/images/smartfuture-thumbnail.jpg" alt="노다지 주식정보 앱 화면과 스마트폰" width="1600" height="1000" loading="lazy")
                   .project-card__content
-                    p.project-card__category PROJECT · DETAILS TO COME
-                    h4.project-card__title 프로젝트 정보 정리 중
-                    p.project-card__role 프로젝트별 역할을 정리하고 있습니다
-                    p.project-card__description 참여 내용이 정리되는 대로 역할과 기여 과정을 추가할 예정입니다.
+                    p.project-card__category Mobile App · 2020
+                    h4.project-card__title 스마트 퓨처
+                    p.project-card__role 앱 퍼블리싱 100%
+                    p.project-card__description 주식정보 앱 노다지의 모든 퍼블리싱을 담당했습니다.
                     ul.project-card__tags(aria-label="사용 기술")
-                      li 기술 정리 중
-                      li 기술 정리 중
+                      li HTML
+                      li Sass
+                      li jQuery
                 article.project-card.swiper-slide
                   .project-card__image-wrap
-                    img.project-card__image(src="https://placehold.co/900x700/E9E5DC/34352F?text=Project" alt="프로젝트 이미지 자리" width="900" height="700" loading="lazy")
+                    img.project-card__image(src="/src/images/geumcheon-responsive.jpg" alt="금천구 홈페이지의 데스크톱, 태블릿, 모바일 화면" width="1448" height="1086" loading="lazy")
                   .project-card__content
-                    p.project-card__category PROJECT · DETAILS TO COME
-                    h4.project-card__title 프로젝트 정보 정리 중
-                    p.project-card__role 프로젝트별 역할을 정리하고 있습니다
-                    p.project-card__description 참여 내용이 정리되는 대로 역할과 기여 과정을 추가할 예정입니다.
+                    p.project-card__category 공공기관 · 2019
+                    h4.project-card__title 금천구청 홈페이지
+                    p.project-card__role 사이트 관리 및 WA마크 획득
+                    p.project-card__description 금천구청에서 관리하는 모든 웹 사이트 관리했습니다.
                     ul.project-card__tags(aria-label="사용 기술")
-                      li 기술 정리 중
-                      li 기술 정리 중
+                      li HTML
+                      li Sass
+                      li jQuery
+                article.project-card.swiper-slide
+                  .project-card__image-wrap
+                    img.project-card__image(src="/src/images/ajou-cancer-center.png" alt="아주대학교병원 암센터 홈페이지 화면" width="1244" height="768" loading="lazy")
+                  .project-card__content
+                    p.project-card__category 의료기관 · 2018
+                    h4.project-card__title 아주대학교 병원 암센터
+                    p.project-card__role 홈페이지 리뉴얼
+                    p.project-card__description 아주대학교 병원 암센터 홈페이지의 리뉴얼을 진행했습니다.
+                    ul.project-card__tags(aria-label="사용 기술")
+                      li HTML
+                      li CSS
+                      li jQuery
+                      li SVN
       section#contact.contact-section.section-shell(aria-labelledby="contact-title")
-        .section-heading
-          p.section-heading__eyebrow CONTACT
-          h2#contact-title.section-heading__title 함께 만들 다음 화면
+        .section-heading.contact-section__heading
+          h2#contact-title.section-heading__title.contact-section__title
+            span.contact-section__title-accent 더 나은 웹
+            | 의 가능성,
+            br
+            | 함께 열어볼까요?
         .contact-section__bottom
-          p.contact-section__copy 좋은 웹 경험에 대한 생각을 나누고 싶습니다.
-          a.contact-link(href="mailto:neodahl90@gmail.com" aria-label="neodahl90@gmail.com 이메일 보내기")
-            span.contact-link__email neodahl90@gmail.com
-            span.contact-link__arrow(aria-hidden="true") ↗
+          p.contact-section__copy 새로운 관점과 탄탄한 기술로, 오래 기억될 웹 경험을 만들어갑니다.
     footer.site-footer
-      p.site-footer__copyright © 2026 NeoDahl
-      a.site-footer__back(href="#about") Back to Top ↑
+      p.site-footer__copyright
+        span.site-footer__copyright-symbol ©
+        |  2026 NeoDahl
+      span.site-footer__ornament
+        | neodahl90
+        span.site-footer__ornament-at @
+        | gmail.com
+      a.site-footer__back(href="#about" aria-label="맨 위로 이동")
+        svg.site-footer__back-icon(viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false")
+          path(d="M12 19V5M5 12l7-7 7 7")
     script(type="module" src="/src/scripts/main.js")
