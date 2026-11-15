@@ -5,7 +5,9 @@ html(lang="ko")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(name="theme-color" content="#ece8df")
     meta(name="description" content="상대의 의도를 세심하게 읽고, 웹 화면으로 구현하는 웹 퍼블리셔 NeoDahl의 포트폴리오입니다.")
-    title NeoDahl — Web Publisher Portfolio
+    title NeoDahl | Portfolio
+    link(rel="icon" type="image/png" sizes="32x32" href="/src/images/favicon-32.png")
+    link(rel="apple-touch-icon" sizes="180x180" href="/src/images/apple-touch-icon.png")
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Manrope:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&family=Outfit:wght@500;600;700&family=Yarndings+12&display=swap" rel="stylesheet")
@@ -112,7 +114,7 @@ html(lang="ko")
         .section-heading
           p.section-heading__eyebrow CAREER
           h2#career-title.section-heading__title 쌓아온 시간
-          p.section-heading__description 사이트 운영과 UI 개발, 웹 접근성 개선까지 이어온 경험입니다.
+          p.section-heading__description 사이트 운영과 UI 개발, 웹 접근성 개선까지 이어온 경험
         article.career-entry
           p.career-entry__period
             time(datetime="2021-03") 2021.03
@@ -120,7 +122,7 @@ html(lang="ko")
             time(datetime="2026-10") 2026.10
           .career-entry__details
             h3.career-entry__company LG CNS
-            p.career-entry__role 여러 국가와 사용 환경을 고려하며 LG.com 글로벌 사이트를 관리했습니다.
+            p.career-entry__role 70여 개 국가 LG.com 글로벌 사이트 관리
         article.career-entry.career-entry--previous
           p.career-entry__period
             time(datetime="2020-11") 2020.11
@@ -128,7 +130,7 @@ html(lang="ko")
             time(datetime="2021-01") 2021.01
           .career-entry__details
             h3.career-entry__company 인재INC
-            p.career-entry__role 한국재정정보원의 웹 접근성 개선 작업에 참여했습니다.
+            p.career-entry__role 한국재정정보원의 웹 접근성 개선 작업 참여
         article.career-entry.career-entry--previous
           p.career-entry__period
             time(datetime="2020-01") 2020.01
@@ -136,7 +138,7 @@ html(lang="ko")
             time(datetime="2020-10") 2020.10
           .career-entry__details
             h3.career-entry__company 스마트퓨쳐
-            p.career-entry__role 자사 서비스를 운영하고 개발하며, 이벤트 페이지 제작도 함께 맡았습니다.
+            p.career-entry__role 자사 서비스를 운영, 이벤트 페이지 제작 등
         article.career-entry.career-entry--previous
           p.career-entry__period
             time(datetime="2019-03") 2019.03
@@ -144,7 +146,7 @@ html(lang="ko")
             time(datetime="2019-12") 2019.12
           .career-entry__details
             h3.career-entry__company 한신정보기술
-            p.career-entry__role 공공기관 사이트를 운영하며 웹 접근성 품질을 높여 WA 마크를 획득했습니다.
+            p.career-entry__role 공공기관 사이트 운영, 웹 접근성 인증 마크 획득
         article.career-entry.career-entry--previous
           p.career-entry__period
             time(datetime="2018-02") 2018.02
@@ -152,7 +154,7 @@ html(lang="ko")
             time(datetime="2019-01") 2019.01
           .career-entry__details
             h3.career-entry__company 개념원리
-            p.career-entry__role 사이트 운영과 UI 개발을 맡고, 이벤트 페이지를 제작했습니다.
+            p.career-entry__role 사이트 운영과 UI 개발, 이벤트 페이지 제작
         article.career-entry.career-entry--previous
           p.career-entry__period
             time(datetime="2016-01") 2016.01
@@ -160,7 +162,8 @@ html(lang="ko")
             time(datetime="2018-01") 2018.01
           .career-entry__details
             h3.career-entry__company 타이탄 플랫폼
-            p.career-entry__role 사이트 운영부터 UI 개발과 이벤트 페이지 제작까지 폭넓게 담당했습니다.
+            p.career-entry__role 사이트 운영부터 UI 개발 및 이벤트 페이지 제작
+
         section#projects.projects-section(aria-labelledby="projects-title")
           .section-heading.section-heading--projects
             p.section-heading__eyebrow PROJECTS
@@ -176,7 +179,7 @@ html(lang="ko")
               .project-grid.swiper-wrapper
                 article.project-card.project-card--featured.swiper-slide
                   .project-card__image-wrap
-                    img.project-card__image(src="https://placehold.co/1200x820/E8E3D8/34352F?text=Global+Website" alt="글로벌 웹사이트 프로젝트 이미지 자리" width="1200" height="820" loading="lazy")
+                    img.project-card__image(src="/src/images/lg-responsive-thumbnail.jpg" alt="데스크톱, 태블릿, 모바일에서 본 LG.com 화면" width="1672" height="941" loading="lazy")
                   .project-card__content
                     p.project-card__category GLOBAL WEB · 2021—2026
                     h4.project-card__title LG.com 글로벌 사이트 관리

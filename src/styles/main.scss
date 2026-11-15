@@ -795,6 +795,11 @@ $logo-fade-delays: (
     }
   }
 
+  &--featured &__image {
+    object-fit: contain;
+    background: #d7cabe;
+  }
+
   &:hover &__image {
     transform: scale(1.025);
   }
