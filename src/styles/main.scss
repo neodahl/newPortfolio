@@ -1,4 +1,5 @@
 // 1. Base: design tokens, element defaults
+@use "base/fonts";
 @use "base/themes";
 @use "base/base";
 @use "abstracts" as *;
@@ -548,10 +549,6 @@ $logo-fade-delays: (
     transform: scale(0.7);
   }
 
-  &__text {
-    display: none;
-  }
-
   @include down(md) {
     @include toggle-size(40px, 26px, 24px, 19px);
   }
@@ -681,15 +678,6 @@ $logo-fade-delays: (
     }
   }
 
-  &__caption {
-    position: absolute;
-    z-index: 2;
-    right: rem(18px);
-    bottom: rem(16px);
-    color: var(--color-muted);
-    font-family: var(--font-label);
-    font-size: rem(10px);
-  }
 }
 
 // approach card

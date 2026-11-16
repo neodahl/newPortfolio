@@ -1,5 +1,8 @@
-import Swiper from './vendor/swiper/swiper-bundle.min.mjs';
-import '../styles/vendor/swiper-bundle.min.css';
+import Swiper from './vendor/swiper/swiper.mjs';
+import A11y from './vendor/swiper/modules/a11y.mjs';
+import Keyboard from './vendor/swiper/modules/keyboard.mjs';
+import Navigation from './vendor/swiper/modules/navigation.mjs';
+import './vendor/swiper/swiper.css';
 import '../styles/main.scss';
 
 const themeToggle = document.querySelector('.theme-toggle');
@@ -247,6 +250,7 @@ if (projectViewport) {
   }
 
   const projectSlider = new Swiper(projectViewport, {
+    modules: [A11y, Keyboard, Navigation],
     slidesPerView: 'auto',
     slidesPerGroup: 1,
     slidesPerGroupAuto: false,

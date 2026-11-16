@@ -51,12 +51,12 @@ $themes: (
   --color-control-hover-icon: #fff;
   // Asset paths are resolved by Vite relative to main.scss, not to this partial
   --page-texture: url("../images/paper-texture-light.png");
-  --font-sans: "Shantell Sans", "Manrope", "Noto Sans KR", sans-serif;
-  --font-display: "Shantell Sans", "Manrope", "Noto Sans KR", sans-serif;
-  --font-label: "Shantell Sans", "DM Mono", monospace;
-  --font-korean-heading: "Shantell Sans", "Gaegu", "Noto Sans KR", sans-serif;
-  --font-korean-body: "Shantell Sans", "Hi Melody", "Noto Sans KR", sans-serif;
-  --font-korean-accent: "Shantell Sans", "Nanum Pen Script", "Noto Sans KR", sans-serif;
+  --font-sans: "Shantell Sans", "Hi Melody", sans-serif;
+  --font-display: var(--font-sans);
+  --font-label: var(--font-sans);
+  --font-korean-heading: var(--font-sans);
+  --font-korean-body: "Hi Melody", sans-serif;
+  --font-korean-accent: var(--font-korean-body);
 
   &[data-theme="dark"] {
     @include define-theme(dark);

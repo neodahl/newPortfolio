@@ -9,8 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "pug": "^3.0.3",
-    "swiper": "^14.3.0"
+    "pug": "^3.0.3"
   },
   "devDependencies": {
     "sass": "^1.80.0",
