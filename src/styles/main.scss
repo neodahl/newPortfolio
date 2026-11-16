@@ -320,7 +320,7 @@ $logo-fade-delays: (
   }
 
   &__copyright-name {
-    font-family: "DM Mono", monospace;
+    font-family: var(--font-display);
   }
 
   &__ornament {
