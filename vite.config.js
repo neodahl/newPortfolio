@@ -20,6 +20,6 @@ function pugPage() {
 }
 
 export default defineConfig({
-  base: '/newPortfolio/',
+  base: '/portfolio/',
   plugins: [pugPage()],
 });

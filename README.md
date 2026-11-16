@@ -15,7 +15,7 @@ npm run dev
 npm run build
 npm run preview
 ```
-
+<!-- 
 ## 콘텐츠 수정
 
 - 페이지 문구와 프로젝트 카드는 `src/index.pug`에서 수정합니다. 프로젝트는 Career 안의 하위 영역이며, vendor에 보관한 Swiper의 원본 접근성·키보드·내비게이션 모듈을 사용해 터치·마우스 드래그와 이전/다음 버튼으로 탐색합니다. CDN은 사용하지 않습니다. 주요 스킬은 Skills 섹션에서 관리합니다.
@@ -32,8 +32,9 @@ npm run preview
 
 저장소의 `main` 브랜치에 push하면 `.github/workflows/deploy.yml`이 빌드와 배포를 진행합니다. 저장소 설정의 **Settings → Pages → Build and deployment → Source**를 **GitHub Actions**로 선택하세요.
 
-현재 저장소 이름(`newPortfolio`)을 기준으로 빌드 경로가 `/newPortfolio/`로 설정되어 있습니다.
+GitHub Pages 주소를 `https://neodahl.github.io/portfolio/`로 사용하려면 저장소 이름도 `portfolio`로 변경해야 하며, Vite 빌드 경로는 `/portfolio/`로 설정되어 있습니다.
 
 ## 접근성 메모
 
-건너뛰기 링크, 시맨틱 영역과 제목 구조, 키보드 포커스 표시, 대체 텍스트, reduced-motion 설정을 포함했습니다. WCAG 2.2 AA 준수를 목표로 한 구현이며, 최종 배포 전 실제 콘텐츠와 색상 대비를 자동·수동으로 확인해 주세요.
+건너뛰기 링크, 시맨틱 영역과 제목 구조, 키보드 포커스 표시, 대체 텍스트, reduced-motion 설정을 포함했습니다. WCAG 2.2 AA 준수를 목표로 한 구현이며, 최종 배포 전 실제 콘텐츠와 색상 대비를 자동·수동으로 확인해 주세요. 
+-->
